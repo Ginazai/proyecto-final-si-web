@@ -1,0 +1,32 @@
+<h2 class="featurette-heading m-3">Noticias</h2>
+<hr class="featurette-divider">
+<!---------------------------- carousel -------------------------------->
+<div id="carousel-noticias" class="carousel slide" data-bs-ride="carousel">
+<div class="carousel-indicators justify-content-end">
+    <button th:each="notice, iter : ${noticias}" type="button" data-bs-target="#carousel-noticias" th:data-bs-slide-to="${iter.index}" class="bg-secondary noticias-indicador" th:aria-label="'Slide' + ${iter.index}"></button>
+ </div>
+  <div class="carousel-inner">
+<div th:each="noticia : ${noticias}" class="carousel-item noticias-carousel-item">
+    <!-------------------- Featurette -------------------------->
+<div class="row featurette">
+  <div class="col-md-7 order-md-2">
+    <h2 th:text="${noticia.titulo}" class="featurette-heading"></h2>
+    <p th:text="${noticia.contenido}" class="lead"></p> 
+  </div>
+  <div class="col-md-5 order-md-1">
+  <img width="500" height="400" th:src="${noticia.image}"/>
+  </div>
+</div>
+</div>
+  </div>
+ <!-------------------- Featurette -------------------------->   
+  <button class="carousel-control-prev opacity-0" type="button" data-bs-target="#carousel-noticias" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next opacity-0" type="button" data-bs-target="#carousel-noticias" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<!---------------------------- carousel -------------------------------->

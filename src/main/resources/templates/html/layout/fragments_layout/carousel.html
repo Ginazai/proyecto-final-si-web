@@ -1,0 +1,31 @@
+<div class="container shadow p-0">
+  <div id="carouselExampleIndicators" class="carousel slide mb-2" data-bs-ride="carousel" style="height: 600px;">
+  <div class="carousel-indicators">
+    <button th:each="destacado, iter : ${destacados}" class="destacados-indicador" type="button" data-bs-target="#carouselExampleIndicators" th:data-bs-slide-to="${iter.index}" aria-label="'Slide' + ${iter.index}"></button>
+    <!-- <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button> -->
+  </div>
+  <div class="carousel-inner">
+  <!--   <div class="carousel-item active">
+      <img src="images/Manufacturing_iStock-1276638149.jpg" style="height: 700px !important; width: 1495.2px !important;" />
+    </div> -->
+    <div th:each="destacado : ${destacados}" class="carousel-item destacados-carousel-item">
+      <img th:src="${destacado.image}" style="height: 600px !important; width: 100%;" />
+      <div class="container">
+          <div class="carousel-caption text-start">
+            <h1 th:text="${destacado.titulo}"></h1>
+            <p th:text="${destacado.contenido}">Some representative placeholder content for the first slide of the carousel.</p>
+            <p><a class="btn btn-lg btn-primary" href="#">Registrarse</a></p>
+          </div>
+        </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</div>
