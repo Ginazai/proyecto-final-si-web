@@ -1,9 +1,9 @@
-<h2 class="featurette-heading m-3">Junta Directiva</h2>
+<h2 id="junta" class="featurette-heading m-3">Junta Directiva</h2>
 <hr class="featurette-divider"/>
 <div class="row row-cols-1 row-cols-md-3 g-4">
   <div th:each="junta : ${junta}" class="col">
     <div class="card shadow-sm junta h-100">
-      <img th:src="${junta.image}" class="card-img-top" alt="...">
+      <img th:src="${junta.image}" class="card-img-top shadow" alt="...">
       <div class="card-body">
         <h5 th:text="${junta.titulo}" class="card-title"></h5>
         <p th:text="${junta.contenido}" class="card-text"></p>

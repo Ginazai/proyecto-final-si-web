@@ -1,4 +1,4 @@
-<h2 class="featurette-heading m-3">Noticias</h2>
+<h2 id="noticias" class="featurette-heading m-3">Noticias</h2>
 <hr class="featurette-divider">
 <!---------------------------- carousel -------------------------------->
 <div id="carousel-noticias" class="carousel slide" data-bs-ride="carousel">
@@ -14,7 +14,7 @@
     <p th:text="${noticia.contenido}" class="lead"></p> 
   </div>
   <div class="col-md-5 order-md-1">
-  <img width="500" height="400" th:src="${noticia.image}"/>
+  <img class="shadow" width="500" height="400" th:src="${noticia.image}"/>
   </div>
 </div>
 </div>
